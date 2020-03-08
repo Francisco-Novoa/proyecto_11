@@ -17,14 +17,14 @@
     <div class=container>
         <div class=row>
             <div class=col>
-                <h1 class="text-secondary">Write Pronouns, Adjetives and Nouns </h1>
+                <h1 class="text-secondary">Write Pronouns, Adjetives, Nouns and Domain names </h1>
             </div>
         </div>
         <div class=row>
             <div class=col>
                 <div class="form-group">
                     <label for="pronouns">Add pronouns separated with commas</label>
-                    <input type="text" value="null" class="form-control" id="pronouns" placeholder="The,Our,">
+                    <input type="text" placeholder="the, our" class="form-control" id="pronouns" >
                 </div>
             </div>
         </div>
@@ -32,7 +32,7 @@
             <div class=col>
                 <div class="form-group">
                     <label for="adjetives">Add adjetives separated with commas</label>
-                    <input type="text" value="null" class="form-control" id="adjetives" placeholder="Cute,Swift,Tiny">
+                    <input type="text" placeholder="great, big" class="form-control" id="adjetives">
                 </div>
             </div>
         </div>
@@ -40,18 +40,26 @@
             <div class=col>
                 <div class="form-group">
                     <label for="nouns">Add nouns separated with commas</label>
-                    <input type="text" value="null" class="form-control" id="nouns" placeholder="Doctor,Stair,Butterfly">
+                    <input type="text" placeholder="jogger, racoon" class="form-control" id="nouns" >
+                </div>
+            </div>
+        </div>
+         <div class=row>
+            <div class=col>
+                <div class="form-group">
+                    <label for="domains">Add domain names separated with commas</label>
+                    <input type="text" placeholder=".cl,.com" class="form-control" id="domains" >
                 </div>
             </div>
         </div>
         <div class=row>
             <div class=col>
-                <button id=submit type="button" class="btn btn-primary btn-lg btn-block">Submit</button>
+                <button id=BUTTON type="button" class="btn btn-primary btn-lg btn-block">Submit</button>
             </div>
         </div>
         <div class=row>
-            <div class=col>
-                <ul id="tabl" class="list-group">
+            <div class=col id=tabla>
+                <ul id=target  class="list-group">
                     <li class="list-group-item">The Cute Doctor</li>
                     <li class="list-group-item">The Cute Stair</li>
                     <li class="list-group-item">The Cute Butterfly</li>

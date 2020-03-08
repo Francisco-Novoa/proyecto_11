@@ -1,39 +1,40 @@
 
-function arrayofdomains(pronoun, adj, noun) {
-    let a, b, c, result = [], aux, aux2;
+function arrayofdomains(pronoun, adj, noun, domain) {
+    let a, b, c, d, result = [], aux, aux2;
     for (a = 0; a < pronoun.length; a++) {
         for (b = 0; b < adj.length; b++) {
             for (c = 0; c < noun.length; c++) {
-                aux = ["", "", "", ".com"]
-                console.log(aux);
-                aux[0] = pronoun[a];
-                aux[1] = adj[b];
-                aux[2] = noun[c];
-                console.log(aux);
-                aux2=aux.join("");
-                console.log(aux)
-                result.push(aux2);
+                for (d = 0; d < domain.length; d++) {
+                    aux = ["", "", "", ""];
+                    aux[0] = pronoun[a];
+                    aux[1] = adj[b];
+                    aux[2] = noun[c];
+                    aux[3] = domain[d];
+                    aux2 = aux.join("");
+                    result.push(aux2);
+                }
             }
         }
     }
-    return result;
+    result;
+    let end = "";
+    for (x in result) {
+        aux = `<li class="list-group-item"> ${result[x]}</li>`;
+        end += aux;
+    }
+    document.getElementById("target").innerHTML = end;
 }
 
-let pronouns = document.getElementById("pronouns").value;
-let adjectives = document.getElementById("adjetives").value;
-let nouns = document.getElementById("nouns").value;
+let button = document.getElementById("BUTTON");
+let pronouns = document.getElementById("pronouns");
+let adjectives = document.getElementById("adjetives");
+let nouns = document.getElementById("nouns");
+let domain = document.getElementById("domains");
 
-
-if (document.getElementById("pronouns").value == null) {
-    pronouns = ["the", "our"];
-}
-if (document.getElementById("adjetives").value == null) {
-    pronouns = ["great", "big"];
-}
-if (document.getElementById("nouns").value == null) {
-    pronouns = ["jogger", "racoon"];
-}
-
-
-lists=document.getElementsByClassName("form-control").addEventListener("change",arrayofdomains(pronouns, adjetives, nouns));
-
+button.addEventListener("click", function () {
+    let p = pronouns.value.split(",");
+    let n = nouns.value.split(",");
+    let a = adjectives.value.split(",");
+    let d = domain.value.split(",");
+    arrayofdomains(p, a, n, d)
+})
